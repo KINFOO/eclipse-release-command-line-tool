@@ -4,6 +4,8 @@ import argparse
 import sys
 from action.milestoneaction import MilestoneAction
 from action.stableaction import StableAction
+from action.maintenancemilestoneaction import MaintenanceMilestoneAction
+from action.maintenancestableaction import MaintenanceStableAction
 
 # TODO:
 # * Create an option to wipe destination directories when they exist
@@ -44,6 +46,14 @@ milestone_parser.add_argument('-mv', '--milestoneversion',
         required = True)
 milestone_parser.set_defaults(func=MilestoneAction())
 
+# maintenance milestone action
+maintenance_milestone_parser = subparsers.add_parser("mm",help= "Deliver a maintenance milestone version")
+maintenance_milestone_parser.add_argument('-mv', '--milestoneversion',
+        help     = 'New version number, for this maintenance milestone release.',
+        metavar  = 'version_number',
+        required = True)
+maintenance_milestone_parser.set_defaults(func=MaintenanceMilestoneAction())
+
 # stable action
 stable_parser = subparsers.add_parser("s", help="Deliver a stable version")
 stable_parser.add_argument('-mv', '--milestoneversion',
@@ -55,6 +65,18 @@ stable_parser.add_argument('-sv', '--stableversion',
         metavar  = 'version_number',
         required = True)
 stable_parser.set_defaults(func=StableAction())
+
+# maintenance stable action
+maintenance_stable_parser = subparsers.add_parser("ms", help="Deliver a stable maintenance version")
+maintenance_stable_parser.add_argument('-mv', '--milestoneversion',
+        help     = 'The maintenance milestone version which should be used as new stable release.',
+        metavar  = 'version_number',
+        required = True)
+maintenance_stable_parser.add_argument('-sv', '--stableversion',
+        help     = 'New version number, for this stable maintenance release.',
+        metavar  = 'version_number',
+        required = True)
+maintenance_stable_parser.set_defaults(func=MaintenanceStableAction())
 
 # Parse them all
 if __name__ == '__main__':

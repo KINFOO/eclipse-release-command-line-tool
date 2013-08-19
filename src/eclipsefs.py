@@ -27,8 +27,8 @@ class EclipseFS:
         self.DOWNLOAD_ROOT_DIRECTORY = os.path.join(root,'home/data/httpd/download.eclipse.org/koneki/')
     
         self.RELEASE_ROOT_PRODUCTS_DIRECTORY = self.DOWNLOAD_ROOT_DIRECTORY + 'products/'
-        self.RELEASE_MILESTONES_PRODUCTS_DIRECTORY = self.RELEASE_ROOT_PRODUCTS_DIRECTORY + 'milestones/'
         self.RELEASE_STABLE_PRODUCTS_DIRECTORY = self.RELEASE_ROOT_PRODUCTS_DIRECTORY + 'stable/'
+        self.RELEASE_MILESTONES_PRODUCTS_DIRECTORY = self.RELEASE_ROOT_PRODUCTS_DIRECTORY + 'milestones/'
     
         self.RELEASE_ROOT_REPOSITORY = self.DOWNLOAD_ROOT_DIRECTORY + 'releases/'
         self.RELEASE_STABLE_REPOSITORY = self.RELEASE_ROOT_REPOSITORY + 'stable/'
