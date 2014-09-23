@@ -21,9 +21,6 @@ _REPOSITORY_CONTENT_JARFILE = 'content.jar'
 
 _COMPOSITE_REPOSITORY_ARTIFACTS_FILE = 'compositeArtifacts.xml'
 _COMPOSITE_REPOSITORY_CONTENT_FILE = 'compositeContent.xml'
-    
-_STATS_URI = 'http://download.eclipse.org/stats/koneki'
-_LDT_FEATURE_ID = 'org.eclipse.koneki.ldt'
 
 _FOLDER_PERMISSIONS = 02775
 _FILE_PERMISSIONS = 0664

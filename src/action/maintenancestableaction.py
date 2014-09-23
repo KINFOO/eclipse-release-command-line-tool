@@ -15,19 +15,19 @@ class MaintenanceStableAction(TasksAction):
         milestone_version = args.milestoneversion
         
         return[MoveRepository("Deliver new Maintenance Stable Release Repository",
-                                        efs.release_milestones_repository(product_name, milestone_version),
-                                        efs.release_stable_repository(product_name, stable_version)),
+                                        efs.release_milestones_repository("", milestone_version),
+                                        efs.release_stable_repository("", stable_version)),
                MoveMilestonesRepositories("Archive Maintenance Milestones Release Repositories",
-                                        efs.release_milestones_composite_repository(product_name),
-                                        efs.archive_milestones_composite_repository(product_name),
+                                        efs.release_milestones_composite_repository(""),
+                                        efs.archive_milestones_composite_repository(""),
                                         stable_version),
                MoveProductsFolder("Deliver new Maintenance Stable Products",
-                                        efs.release_milestones_products_directory(product_name, milestone_version),
-                                        efs.release_stable_products_directory(product_name, stable_version),
+                                        efs.release_milestones_products_directory("", milestone_version),
+                                        efs.release_stable_products_directory("", stable_version),
                                         efs.products_filenames(product_name)),
                MoveMilestonesProductFolders("Archive Maintenance Milestones Products",
-                                        efs.release_milestones_allversion_products_directory(product_name),
-                                        efs.archive_milestones_allversion_products_directory(product_name),
+                                        efs.release_milestones_allversion_products_directory(""),
+                                        efs.archive_milestones_allversion_products_directory(""),
                                         efs.products_filenames(product_name),
                                         stable_version)] 
         
